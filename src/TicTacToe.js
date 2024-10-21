@@ -51,6 +51,7 @@ const TicTacToe = () => {
           </button>
         ))}
       </div>
+      <button onClick={() => setBoard(Array(9).fill(null))}>Reset</button>
     </div>
   );
 };

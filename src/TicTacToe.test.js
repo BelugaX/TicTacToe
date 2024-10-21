@@ -6,7 +6,7 @@ describe('TicTacToe', () => {
     test('renders the Tic Tac Toe board', () => {
         render(<TicTacToe />);
         const squares = screen.getAllByRole('button');
-        expect(squares.length).toBe(9);
+        expect(squares.length).toBe(10);
     });
 
     test('allow players to take turns', () => {
