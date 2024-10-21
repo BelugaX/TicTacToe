@@ -51,12 +51,12 @@ describe('TicTacToe', () => {
         fireEvent.click(squares[0]); // X
         fireEvent.click(squares[1]); // O
         fireEvent.click(squares[2]); // X
-        fireEvent.click(squares[3]); // O
         fireEvent.click(squares[4]); // X
+        fireEvent.click(squares[3]); // X
         fireEvent.click(squares[5]); // O
-        fireEvent.click(squares[6]); // O
-        fireEvent.click(squares[7]); // X
-        fireEvent.click(squares[8]); // X
+        fireEvent.click(squares[7]); // O
+        fireEvent.click(squares[6]); // X
+        fireEvent.click(squares[8]); // O
 
         expect(screen.getByText(/Match Tie/i)).toBeInTheDocument();
     });

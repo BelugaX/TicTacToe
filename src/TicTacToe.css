@@ -4,6 +4,11 @@
     align-items: center;
 }
 
+.status {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
