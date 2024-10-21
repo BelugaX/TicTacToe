@@ -42,4 +42,22 @@ describe('TicTacToe', () => {
 
         expect(screen.getByText(/Winner: X/i)).toBeInTheDocument();
     });
+
+    test('displays a tie message when the game ends in a tie', () => {
+        render(<TicTacToe />);
+        const squares = screen.getAllByRole('button');
+
+        // Simulate a tie scenario
+        fireEvent.click(squares[0]); // X
+        fireEvent.click(squares[1]); // O
+        fireEvent.click(squares[2]); // X
+        fireEvent.click(squares[3]); // O
+        fireEvent.click(squares[4]); // X
+        fireEvent.click(squares[5]); // O
+        fireEvent.click(squares[6]); // O
+        fireEvent.click(squares[7]); // X
+        fireEvent.click(squares[8]); // X
+
+        expect(screen.getByText(/Match Tie/i)).toBeInTheDocument();
+    });
 });
