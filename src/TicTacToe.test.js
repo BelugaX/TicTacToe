@@ -19,4 +19,13 @@ describe('TicTacToe', () => {
         fireEvent.click(squares[1]);
         expect(squares[1]).toHaveTextContent('O');
     });
+
+    test('does not allow clicking on filled squares', () => {
+        render(<TicTacToe />);
+        const squares = screen.getAllByRole('button');
+      
+        fireEvent.click(squares[0]); // X's turn
+        fireEvent.click(squares[0]); // Click again on the same square
+        expect(squares[0]).toHaveTextContent('X');
+    });
 });
