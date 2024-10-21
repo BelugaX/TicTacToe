@@ -60,4 +60,16 @@ describe('TicTacToe', () => {
 
         expect(screen.getByText(/Match Tie/i)).toBeInTheDocument();
     });
+
+    test('resets the game', () => {
+        render(<TicTacToe />);
+        const squares = screen.getAllByRole('button');
+
+        fireEvent.click(squares[0]); // X
+        fireEvent.click(squares[1]); // O
+        fireEvent.click(screen.getByText(/Reset/i)); // Reset the game
+
+        expect(squares[0]).toBeEmptyDOMElement();
+        expect(squares[1]).toBeEmptyDOMElement();
+    });
 });
